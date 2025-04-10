@@ -89,4 +89,11 @@ public partial class SimplePageViewModel : BasePageViewModel
 		string message = $"From {oldMonthName} to {newMonthName}";
 		await Shell.Current.DisplayAlert("Month Changed", message, "OK");
 	}
+
+	[RelayCommand]
+	static async Task DayTapped()
+	{
+		await Shell.Current.DisplayAlert("DayTapped", "Congrats!!!", "yeeema");
+	}
+
 }

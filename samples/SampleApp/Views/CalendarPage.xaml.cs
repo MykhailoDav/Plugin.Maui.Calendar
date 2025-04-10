@@ -2,8 +2,9 @@
 
 public partial class CalendarPage : ContentPage
 {
-	public CalendarPage()
+	public CalendarPage(CalendarViewModel vm)
 	{
 		InitializeComponent();
+		BindingContext = vm;
 	}
 }
