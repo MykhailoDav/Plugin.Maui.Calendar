@@ -1910,8 +1910,6 @@ public partial class Calendar : ContentView, IDisposable
 	{
 		if (bindable is Calendar calendar && (newValue is List<DateTime> || newValue is null) && !Equals(newValue, oldValue))
 		{
-			calendar.UpdateDays(true);
-			calendar.CurrentSelectionEngine.UpdateDateSelection(calendar.SelectedDates);
 			calendar.UpdateSelectedDateLabel();
 			calendar.UpdateEvents();
 
@@ -1919,6 +1917,8 @@ public partial class Calendar : ContentView, IDisposable
 			{
 				calendar.UpdateRangeSelection();
 			}
+			calendar.CurrentSelectionEngine.UpdateDateSelection(calendar.SelectedDates);
+			calendar.UpdateDays(true);
 		}
 	}
 
