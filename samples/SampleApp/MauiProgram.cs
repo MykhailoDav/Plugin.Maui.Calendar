@@ -52,6 +52,7 @@ public static class MauiProgram
 		builder.Services.AddTransientWithShellRoute<SimplePage, SimplePageViewModel>(nameof(SimplePage));
 		builder.Services.AddTransientWithShellRoute<XiaomiCalendarPage, XiaomiCalendarViewModel>(nameof(XiaomiCalendarPage));
 		builder.Services.AddTransientWithShellRoute<EditEventPage, EditEventPageViewModel>(nameof(EditEventPage));
+		builder.Services.AddTransientWithShellRoute<WeekSelectionCalendarPage, WeekSelectionCalendarViewModel>(nameof(WeekSelectionCalendarPage));
 
 		return builder;
     }

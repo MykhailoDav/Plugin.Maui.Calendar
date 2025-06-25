@@ -14,6 +14,9 @@ public partial class MainPage : ContentPage
     async void DefaultCalendar(object sender, EventArgs e) =>
         await Shell.Current.GoToAsync(nameof(CalendarPage));
 
+    async void WeekSelectionCalendar(object sender, EventArgs e) =>
+        await Shell.Current.GoToAsync(nameof(WeekSelectionCalendarPage));
+
     async void SimpleCalendar(object sender, EventArgs e) =>
         await Shell.Current.GoToAsync(nameof(SimplePage));
 
@@ -101,6 +104,6 @@ public partial class MainPage : ContentPage
     async void Windows11Calendar(object sender, EventArgs e) =>
         await Shell.Current.GoToAsync(nameof(Windows11CalendarPage));
 
-    async void XiaomiCalendar(object sender, EventArgs e)=>
+    async void XiaomiCalendar(object sender, EventArgs e) =>
         await Shell.Current.GoToAsync(nameof(XiaomiCalendarPage));
 }

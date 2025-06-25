@@ -54,7 +54,7 @@
         EventsScrollViewVisible="True"
         OtherMonthWeekIsVisible="False"
         FirstDayOfWeek="Monday"
-        HorizontalOptions="Fill"
+        HorizontalOptions="Fill" 
         MaximumDate="{Binding MaximumDate}"
         MinimumDate="{Binding MinimumDate}"
         Month="{Binding Month}"

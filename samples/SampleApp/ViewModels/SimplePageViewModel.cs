@@ -8,22 +8,12 @@ public partial class SimplePageViewModel : BasePageViewModel
 	public SimplePageViewModel() : base()
 	{
 
-		// testing all kinds of adding events
-		// when initializing collection
 		var threeEventsTommorrow = GenerateEvents(3, "Simple3").ToArray();
 		Events = new EventCollection
 		{
-			[DateTime.Now.AddDays(-3)] = new List<EventModel>(GenerateEvents(10, "Cool")),
-			[DateTime.Now.AddDays(4)] = new List<EventModel>(GenerateEvents(2, "Simple2")),
-			[DateTime.Now.AddDays(2)] = new List<EventModel>(GenerateEvents(1, "Simple1")),
-			[DateTime.Now.AddDays(1)] = new DayEventCollection<EventModel>(threeEventsTommorrow) { Colors = threeEventsTommorrow.Select(e => e.Color).ToArray() },
+			[DateTime.Now.AddDays(1)] = new DayEventCollection<EventModel>(threeEventsTommorrow) { Colors = [.. threeEventsTommorrow.Select(e => e.Color)] },
 		};
 
-		// with add method
-		Events.Add(DateTime.Now.AddDays(-1), new List<EventModel>(GenerateEvents(5, "Cool")));
-
-		// with indexer
-		Events[DateTime.Now] = new List<EventModel>(GenerateEvents(2, "Boring"));
 
 	}
 
