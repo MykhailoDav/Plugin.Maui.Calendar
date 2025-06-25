@@ -10,11 +10,11 @@ public partial class WeekSelectionCalendarViewModel : BasePageViewModel
     [ObservableProperty]
     ObservableCollection<DateTime> selectedDates = [];
 
-    [ObservableProperty]
-    DateTime? selectedEndDate;
+	[ObservableProperty]
+    DateTime? selectedStartDate = DateTime.Today.AddDays(-2);
 
     [ObservableProperty]
-    DateTime? selectedStartDate;
+    DateTime? selectedEndDate = DateTime.Today.AddDays(2);
 
     [RelayCommand]
     void DayTapped(object item)
@@ -24,8 +24,9 @@ public partial class WeekSelectionCalendarViewModel : BasePageViewModel
 			return;
 		}
 
+		var a = tappedDate.DayOfWeek - DayOfWeek.Monday;
 		// Calculate Monday (start of the week)
-		int diffToMonday = (7 + (tappedDate.DayOfWeek - DayOfWeek.Monday)) % 7;
+		int diffToMonday = (7 + a) % 7;
         var startOfWeek = tappedDate.AddDays(-diffToMonday);
 
         // Sunday (end of the week)
@@ -33,12 +34,5 @@ public partial class WeekSelectionCalendarViewModel : BasePageViewModel
 
         SelectedStartDate = startOfWeek;
         SelectedEndDate = endOfWeek;
-
-        SelectedDates.Clear();
-        for (var date = startOfWeek; date <= endOfWeek; date = date.AddDays(1))
-        {
-            SelectedDates.Add(date);
-        }
     }
-
 }
