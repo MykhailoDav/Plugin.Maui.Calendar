@@ -45,6 +45,7 @@ public partial class RangeSelectionPageViewModel : BasePageViewModel
     [ObservableProperty]
     WeekLayout calendarLayout = WeekLayout.Month;
 
+
     [ObservableProperty]
     ObservableCollection<DateTime> selectedDates = [];
 

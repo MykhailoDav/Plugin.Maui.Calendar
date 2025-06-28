@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SampleApp.Views.WeekSelectionCalendarPage"
-             xmlns:controls="clr-namespace:SampleApp.Controls"
-             xmlns:local="clr-namespace:SampleApp.ViewModels"
-             xmlns:plugin="clr-namespace:Plugin.Maui.Calendar.Controls;assembly=Plugin.Maui.Calendar"
-             xmlns:styles="clr-namespace:Plugin.Maui.Calendar.Styles;assembly=Plugin.Maui.Calendar"
-             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             x:DataType="local:WeekSelectionCalendarViewModel"
-             BackgroundColor="{toolkit:AppThemeResource BackgroundColor}"
-             Shell.TabBarIsVisible="False"
-             Title="WeekSelectionCalendarPage">
-    <plugin:RangeSelectionCalendar ShownDate="{Binding ShownDate}"
-                                   SelectedEndDate="{Binding SelectedEndDate}"
-                                   SelectedStartDate="{Binding SelectedStartDate}"
-                                   DayTappedCommand="{Binding DayTappedCommand}"/>
+<ContentPage
+    x:Class="SampleApp.Views.WeekSelectionCalendarPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:SampleApp.Controls"
+    xmlns:local="clr-namespace:SampleApp.ViewModels"
+    xmlns:plugin="clr-namespace:Plugin.Maui.Calendar.Controls;assembly=Plugin.Maui.Calendar"
+    xmlns:styles="clr-namespace:Plugin.Maui.Calendar.Styles;assembly=Plugin.Maui.Calendar"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Title="WeekSelectionCalendarPage"
+    x:DataType="local:WeekSelectionCalendarViewModel"
+    BackgroundColor="{toolkit:AppThemeResource BackgroundColor}"
+    Shell.TabBarIsVisible="False">
+    <plugin:MultiSelectionCalendar
+        DayTappedCommand="{Binding DayTappedCommand}"
+        SelectedDates="{Binding SelectedDates}"
+        ShownDate="{Binding ShownDate}" />
 
 </ContentPage>
